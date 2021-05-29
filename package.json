@@ -1,0 +1,18 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "description": "All the enums, Interfaces and Modules\nneeded for the Smart Bar project",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "common"
+  ],
+  "author": "inbal_schkolnik",
+  "license": "MIT"
+}
