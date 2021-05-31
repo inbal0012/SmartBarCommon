@@ -1,6 +1,7 @@
 # Smart Bar Common
 
 ⚠️ This is a work in progress ⚠️
+
 A full-stack Web app written using MERN, it includes the following:
 - Inventory management
 - Smart cocktail ordering system
