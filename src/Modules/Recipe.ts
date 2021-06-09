@@ -1,4 +1,3 @@
-import ERecipeCategory from '../Enums/ERecipeCategory'
 import AbstractInventoryItem from './InventoryItemModules/AbstractInventoryItem';
 import { NullInventoryItem } from './InventoryItemModules/InventoryItem';
 
@@ -26,29 +25,6 @@ class Recipe {
         // TODO
     }
 
-    checkAvailability() {
-        var isAvailable = true;
-        var missingIng = "";
-
-        this.ingredients.forEach(ingredient => {
-            if (!ingredient[1].checkAvailability(ingredient[0])) {
-                isAvailable = false;
-                missingIng += ingredient[1].name + ", ";
-            }
-        });
-        this.isAvailable = isAvailable
-        return { success: isAvailable, reason: isAvailable ? "All ingredients available" : "Missing ingredients: " + missingIng };
-    }
-
-    calculateDrinkStrength() {
-        // var alcohol;
-        // var quantity;
-        // this.ingredients.forEach(ingredient => {
-        //     if (ingredient.category )
-        // });
-        // TODO
-    }
-
     toJson() {
         return JSON.stringify({
             name: this.name,
@@ -64,7 +40,7 @@ class Recipe {
         var str: string = "[";
 
         this.ingredients.forEach(item => {
-            str += item[0] + " " + item[1].getName() + ", ";
+            str += item[0] + " " + item[1].name + ", ";
         });
         str+="]"
         //str+=this.ingredients.map(ing => {return (<li>{ing[0]} {ing[1].getName()}</li>)})

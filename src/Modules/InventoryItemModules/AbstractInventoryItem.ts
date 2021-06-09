@@ -15,24 +15,5 @@ export default abstract class AbstractInventoryItem {
         }
     }
 
-    getName() {
-        return this.name;
-    }
-    getCategory() {
-        return this.category;
-    }
-    getStatus() {
-        return this.status;
-    }
-    getRemaining() {
-        return this.remaining;
-    }
-    abstract update(ingredientParam: string, newValue: any):  {
-        success: boolean;
-        reason: string;
-    };
-    abstract updateStatus(): void;
     abstract toJson(): any;
-    abstract use(amountUsed: number): void
-    abstract checkAvailability(amountNeeded: number): boolean;
 }
