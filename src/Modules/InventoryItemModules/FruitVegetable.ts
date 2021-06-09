@@ -6,13 +6,8 @@ class FruitVegetable extends AbstractInventoryItem {
   minRequired;
 
   constructor(name: string, category: string, remaining: number, minRequired: number) {
-    if (
-      category === EInventoryCategory.Fruits ||
-      category === EInventoryCategory.Vegetables
-    ) {
-      super(name, category, remaining);
-      this.minRequired = minRequired;
-    } else throw new Error(category + " can't be a Veg/Fruit type");
+    super(name, category, remaining);
+    this.minRequired = minRequired;
   }
 
   toJson() {
