@@ -3,19 +3,15 @@ import { NullInventoryItem } from './InventoryItemModules/InventoryItem';
 
 class Recipe {
     name: string;
-    ingredients: [number, AbstractInventoryItem][];
     method: Array<string>;
     portion: number;
     //categories: Array<string>;
-    isAvailable: boolean;
     // TODO measurement converting ( + measure unit for misc InItems)
     // TODO garnish
     // TODO parse ingredients
 
-    constructor(name: string, ingredients: [number, AbstractInventoryItem][], method: Array<string>, portion: number) {
+    constructor(name: string, public ingredients: [number, AbstractInventoryItem, boolean][], method: Array<string>, portion: number) {
         this.name = name;
-        this.isAvailable = true;
-        this.ingredients = ingredients;
         this.method = method;
         this.portion = portion;
         //this.categories = new Array(ERecipeCategory.StrengthNonAlcoholic);
@@ -32,7 +28,6 @@ class Recipe {
             method: this.method,
             portion: this.portion,
             //categories: JSON.stringify(this.categories),
-            isAvailable: this.isAvailable,
         })
     }
 
@@ -42,7 +37,7 @@ class Recipe {
         this.ingredients.forEach(item => {
             str += item[0] + " " + item[1].name + ", ";
         });
-        str+="]"
+        str += "]"
         //str+=this.ingredients.map(ing => {return (<li>{ing[0]} {ing[1].getName()}</li>)})
         return str;
     }
@@ -50,7 +45,7 @@ class Recipe {
 
 class NullRecipe extends Recipe {
     constructor() {
-        super("Recipe Not Found", [[0, new NullInventoryItem()]], ["Recipe Not Found"], 0);
+        super("Recipe Not Found", [[0, new NullInventoryItem(), false]], ["Recipe Not Found"], 0);
     }
 
     addCategory(category: string) {
