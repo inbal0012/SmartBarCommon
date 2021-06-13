@@ -3,14 +3,14 @@ import { NullInventoryItem } from './InventoryItemModules/InventoryItem';
 
 class Recipe {
     name: string;
-    method: Array<string>;
+    method: [string];
     portion: number;
     //categories: Array<string>;
     // TODO measurement converting ( + measure unit for misc InItems)
     // TODO garnish
     // TODO parse ingredients
 
-    constructor(name: string, public ingredients: [number, AbstractInventoryItem, boolean][], method: Array<string>, portion: number) {
+    constructor(name: string, public ingredients: [number, AbstractInventoryItem, boolean][], method: [string], portion: number) {
         this.name = name;
         this.method = method;
         this.portion = portion;
