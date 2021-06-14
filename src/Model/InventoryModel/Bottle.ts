@@ -1,17 +1,21 @@
-import EInventoryCategory from '../../Enums/EInventoryCategory';
-import EInventoryStatus from '../../Enums/EInventoryStatus';
+/* eslint-disable prettier/prettier */
 import AbstractInventoryItem from './AbstractInventoryItem';
 class Bottle extends AbstractInventoryItem {
-  alcoholPercentage: number = 0;
+  alcoholPercentage = 0;
   minRequired: number;
 
-  constructor(name: string, category: string, remaining: number, minRequired: number) {
+  constructor(
+    name: string,
+    category: string,
+    remaining: number,
+    minRequired: number,
+  ) {
     super(name, category, remaining);
     this.minRequired = minRequired;
   }
 
   toJson() {
-    var json = JSON.stringify(this);
+    const json = JSON.stringify(this);
     return json;
   }
 }
@@ -19,7 +23,12 @@ class Bottle extends AbstractInventoryItem {
 class BottleBuilder {
   private bottle: Bottle;
 
-  constructor(name: string, category: string, remaining: number, minRequired: number) {
+  constructor(
+    name: string,
+    category: string,
+    remaining: number,
+    minRequired: number,
+  ) {
     this.bottle = new Bottle(name, category, remaining, minRequired);
   }
 

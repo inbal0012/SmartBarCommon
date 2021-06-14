@@ -1,5 +1,5 @@
-import AbstractInventoryItem from './InventoryItemModules/AbstractInventoryItem';
-import { NullInventoryItem } from './InventoryItemModules/InventoryItem';
+import AbstractInventoryItem from './InventoryModel/AbstractInventoryItem';
+import { NullInventoryItem } from './InventoryModel/InventoryItem';
 
 class Recipe {
     name: string;
