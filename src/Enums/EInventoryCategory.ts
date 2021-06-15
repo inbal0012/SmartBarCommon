@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const EInventoryCategory = {
   BottleCategory: {
     AlcoholCategory: {
@@ -102,7 +103,7 @@ export default EInventoryCategory;
 //   Liquor: 'Liquor',}
 //   type EAlcohol = typeof EAlcohol[keyof typeof EAlcohol];
 
-//   const EBottle = { ...EAlcohol, 
+//   const EBottle = { ...EAlcohol,
 //     Beverage: 'Beverage',
 //     Juice: 'Juice',
 //     Syrup: 'Syrup',
@@ -111,7 +112,7 @@ export default EInventoryCategory;
 //   }
 //   type EBottle = typeof EBottle[keyof typeof EBottle];
 
-//   const EInventoryCategory = {...EBottle, 
+//   const EInventoryCategory = {...EBottle,
 //     Fridge: 'Fridge',
 //     Dairy: 'Dairy',
 //     Fruits: 'Fruits',
