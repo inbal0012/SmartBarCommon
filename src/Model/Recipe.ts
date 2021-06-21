@@ -3,6 +3,7 @@ import AbstractInventoryItem from './InventoryModel/AbstractInventoryItem';
 import { NullInventoryItem } from './InventoryModel/InventoryItem';
 
 class Recipe {
+  id: string;
   name: string;
   method: [string];
   portion: number;
@@ -13,11 +14,13 @@ class Recipe {
   // TODO parse ingredients
 
   constructor(
+    id: string,
     name: string,
     public ingredients: [number, AbstractInventoryItem, boolean][],
     method: [string],
     portion: number,
   ) {
+    this.id = id
     this.name = name;
     this.method = method;
     this.portion = portion;
@@ -53,6 +56,7 @@ class Recipe {
 class NullRecipe extends Recipe {
   constructor() {
     super(
+      '0',
       'Recipe Not Found',
       [[0, new NullInventoryItem(), false]],
       ['Recipe Not Found'],

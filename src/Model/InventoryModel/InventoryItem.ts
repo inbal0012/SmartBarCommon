@@ -6,12 +6,13 @@ import AbstractInventoryItem from './AbstractInventoryItem';
 class InventoryItem extends AbstractInventoryItem {
   minRequired;
   constructor(
+    id: string,
     name: string,
     category: string,
     remaining: number,
     minRequired = 1,
   ) {
-    super(name, category, remaining);
+    super(id, name, category, remaining);
     this.minRequired = minRequired;
   }
 
@@ -22,7 +23,7 @@ class InventoryItem extends AbstractInventoryItem {
 }
 class NullInventoryItem extends AbstractInventoryItem {
   constructor() {
-    super('Unavailable', EInventoryCategory.Unavailable, 0);
+    super('0', 'Unavailable', EInventoryCategory.Unavailable, 0);
   }
 
   toJson() {

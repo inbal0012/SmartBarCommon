@@ -4,13 +4,13 @@ class Bottle extends AbstractInventoryItem {
   alcoholPercentage = 0;
   minRequired: number;
 
-  constructor(
+  constructor(id: string,
     name: string,
     category: string,
     remaining: number,
     minRequired: number,
   ) {
-    super(name, category, remaining);
+    super(id, name, category, remaining);
     this.minRequired = minRequired;
   }
 
@@ -24,12 +24,13 @@ class BottleBuilder {
   private bottle: Bottle;
 
   constructor(
+    id: string,
     name: string,
     category: string,
     remaining: number,
     minRequired: number,
   ) {
-    this.bottle = new Bottle(name, category, remaining, minRequired);
+    this.bottle = new Bottle(id, name, category, remaining, minRequired);
   }
 
   alcoholPercentage(alcoholPercentage: number) {

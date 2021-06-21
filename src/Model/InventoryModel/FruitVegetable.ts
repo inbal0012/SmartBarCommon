@@ -7,12 +7,13 @@ class FruitVegetable extends AbstractInventoryItem {
   minRequired;
 
   constructor(
+    id: string,
     name: string,
     category: string,
     remaining: number,
     minRequired: number,
   ) {
-    super(name, category, remaining);
+    super(id, name, category, remaining);
     this.minRequired = minRequired;
   }
 

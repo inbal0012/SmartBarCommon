@@ -4,8 +4,8 @@ import AbstractInventoryItem from './AbstractInventoryItem';
 class BooleanInventoryItem extends AbstractInventoryItem {
   needStatusUpdate = false;
 
-  constructor(name: string, category: string, remaining: boolean) {
-    super(name, category, remaining);
+  constructor(id: string, name: string, category: string, remaining: boolean) {
+    super(id, name, category, remaining);
   }
 
   toJson() {

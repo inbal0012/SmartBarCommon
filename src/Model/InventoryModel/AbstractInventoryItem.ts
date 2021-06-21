@@ -2,12 +2,14 @@
 import EInventoryStatus from '../../Enums/EInventoryStatus';
 
 export default abstract class AbstractInventoryItem {
+  id
   name;
   category;
   remaining;
   status;
 
-  constructor(name: string, category: string, remaining: any) {
+  constructor(id: string, name: string, category: string, remaining: any) {
+    this.id = id
     this.name = name;
     this.category = category;
     this.remaining = remaining;
