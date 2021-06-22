@@ -1,10 +1,11 @@
-/* eslint-disable prettier/prettier */
+import EInventoryCategory from '../../Enums/EInventoryCategory';
 import AbstractInventoryItem from './AbstractInventoryItem';
 class Bottle extends AbstractInventoryItem {
   alcoholPercentage = 0;
   minRequired: number;
 
-  constructor(id: string,
+  constructor(
+    id: string,
     name: string,
     category: string,
     remaining: number,
@@ -17,6 +18,27 @@ class Bottle extends AbstractInventoryItem {
   toJson() {
     const json = JSON.stringify(this);
     return json;
+  }
+
+  static isABottleCategory(category: string) {
+    if (
+      Object.values(EInventoryCategory.BottleCategory).includes(category) ||
+      Object.values(EInventoryCategory.BottleCategory.AlcoholCategory).includes(
+        category,
+      )
+    )
+      return true;
+    else return false;
+  }
+
+  static isAAlcoholCategory(category: string) {
+    if (
+      Object.values(EInventoryCategory.BottleCategory.AlcoholCategory).includes(
+        category,
+      )
+    )
+      return true;
+    else return false;
   }
 }
 

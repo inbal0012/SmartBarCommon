@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import EInventoryCategory from '../../Enums/EInventoryCategory';
 import EInventoryStatus from '../../Enums/EInventoryStatus';
 import AbstractInventoryItem from './AbstractInventoryItem';
@@ -19,6 +18,15 @@ class FruitVegetable extends AbstractInventoryItem {
 
   toJson() {
     JSON.stringify(this);
+  }
+
+  static isAFruitVegetableCategory(category: string) {
+    if (
+      category === EInventoryCategory.Fruits ||
+      category === EInventoryCategory.Vegetables
+    )
+      return true;
+    else return false;
   }
 }
 

@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+import EInventoryCategory from '../../Enums/EInventoryCategory';
 import AbstractInventoryItem from './AbstractInventoryItem';
 
 class BooleanInventoryItem extends AbstractInventoryItem {
@@ -10,6 +10,15 @@ class BooleanInventoryItem extends AbstractInventoryItem {
 
   toJson() {
     return JSON.stringify(this);
+  }
+
+  static isABooleanCategory(category: string) {
+    if (
+      category === EInventoryCategory.Herbs ||
+      category === EInventoryCategory.Spices
+    )
+      return true;
+    else return false;
   }
 }
 
