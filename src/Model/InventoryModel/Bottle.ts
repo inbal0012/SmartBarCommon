@@ -1,4 +1,6 @@
+/* eslint-disable prettier/prettier */
 import EInventoryCategory from '../../Enums/EInventoryCategory';
+import EInventoryStatus from '../../Enums/EInventoryStatus';
 import AbstractInventoryItem from './AbstractInventoryItem';
 class Bottle extends AbstractInventoryItem {
   alcoholPercentage = 0;
@@ -13,8 +15,16 @@ class Bottle extends AbstractInventoryItem {
   ) {
     super(id, name, category, remaining);
     this.minRequired = minRequired;
+    this.updateStatus();
   }
 
+  updateStatus() {
+    if (this.remaining > this.minRequired * 2)
+      this.status = EInventoryStatus.Ok;
+    else if (this.remaining > this.minRequired)
+      this.status = EInventoryStatus.AlmostEmpty;
+    else this.status = EInventoryStatus.Empty;
+  }
   toJson() {
     const json = JSON.stringify(this);
     return json;

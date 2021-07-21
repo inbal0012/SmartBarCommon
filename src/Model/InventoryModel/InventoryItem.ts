@@ -14,7 +14,17 @@ class InventoryItem extends AbstractInventoryItem {
   ) {
     super(id, name, category, remaining);
     this.minRequired = minRequired;
+    this.updateStatus();
   }
+
+  updateStatus() {
+    if (this.remaining > this.minRequired * 2)
+      this.status = EInventoryStatus.Ok;
+    else if (this.remaining > this.minRequired)
+      this.status = EInventoryStatus.AlmostEmpty;
+    else this.status = EInventoryStatus.Empty;
+  }
+
 
   toJson() {
     const json = JSON.stringify(this);
