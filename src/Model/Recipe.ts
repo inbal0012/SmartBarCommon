@@ -7,7 +7,7 @@ class Recipe {
   name: string;
   method: [string];
   portion: number;
-  strength: number;
+  strength = 0;
   //categories: Array<string>;
   // TODO measurement converting ( + measure unit for misc InItems)
   // TODO garnish
@@ -28,7 +28,7 @@ class Recipe {
   }
 
   addCategory(category: string) {
-    // TODO
+    // TODO implement addCategory function
   }
 
   toJson() {
@@ -48,7 +48,6 @@ class Recipe {
       str += item[0] + ' ' + item[1].name + ', ';
     });
     str += ']';
-    //str+=this.ingredients.map(ing => {return (<li>{ing[0]} {ing[1].getName()}</li>)})
     return str;
   }
 }
@@ -65,15 +64,7 @@ class NullRecipe extends Recipe {
   }
 
   addCategory(category: string) {
-    // TODO
-  }
-
-  checkAvailability() {
-    return { success: false, reason: 'Recipe Not Found' };
-  }
-
-  calculateDrinkStrength() {
-    return 0;
+    // TODO implement addCategory function
   }
 
   toJson() {
